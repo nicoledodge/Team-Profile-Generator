@@ -1,7 +1,7 @@
 // create different requirer for classes- employee,engineer,manager,intern
 const inquirer = require("inquirer");
 const fs = require("fs");
-const style = require("./assets/style")
+const style = require("./dist/style")
 
 // const Employee = require("./lib/employee");
 const Engineer = require("./lib/engineer");
@@ -82,8 +82,7 @@ function addTeamMembers() {
             if (data.addNewMember === "Yes, add Intern") {
                 addInterns();
             }
-            if (data.nemMember === "No, create my Team Profile") {
-                console.log("All Team members added!");
+            if (data.addNewMember === "No, create my Team Profile") {
                 compileTeam();
             }
 
@@ -150,9 +149,9 @@ function addInterns() {
 
 // function compile team altogether - put HTML in this with the final team cards
 function compileTeam() {
-    console.log("Team Created!");
+    // console.log("Team Created!");
 
-    const htmlArray = []
+    const teamArray = []
     const htmlBeginning =
         //back-tick that starts HTML
         `
@@ -174,7 +173,8 @@ function compileTeam() {
     </div>
     <div class="card-container">
 `
-    htmlArray.push(htmlBeginning);
+    teamArray.push(htmlBeginning);
+    //for loop to append cards to html depending on how many are filled out
     for (let i = 0; i < finalTeam.length; i++) {
         let officeNum;
         let card = `
@@ -202,24 +202,36 @@ function compileTeam() {
             <p>School: ${finalTeam[i].school}</p>
             `
         }
-        htmlArray.push(card);
+        card += `
+        </div>
+        </div>
+        `
+        teamArray.push(card);
+        const htmlEnd =
+            `
+            </body>
+            </html>
+            `
+        teamArray.push(htmlEnd);
+        console.log(teamArray);
     }
-//back-tick that ends HTML
 
-
-//for loop to append cards to html depending on how many are filled out
+    fs.writeFile('./dist/index.html', `${teamArray}`, function (err) {
+        if (err) throw err;
+        console.log('Your team profile has been successfully created! Check it out at index.html!');
+    });
     //fs write file to generated html
-    .then(writeFile = htmlArray => {
-        fs.writeFile('./dist/index.html', htmlArray.join(''), function (err) {
-            // if there is an error
-            if (err) {
-                console.log(err);
-                // when the profile has been created
-            } else {
-                console.log("Your team profile has been successfully created! Please check out the index.html")
-            }
-        })
-    })
+    // const writeFile = teamArray => {
+    //     fs.writeFile('./dist/index.html', teamArray.join(``), function (err) {
+    //         // if there is an error
+    //         if (err) {
+    //             console.log(err);
+    //             // when the profile has been created
+    //         } else {
+    //             console.log("Your team profile has been successfully created! Check it out at index.html!")
+    //         }
+    //     })
+    // }
 }
 
 //then run the first prompt to start the whole page
