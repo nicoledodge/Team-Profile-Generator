@@ -9,7 +9,7 @@ Mock-up example of generated HTML page containing the team profile created from 
 ## Table of Contents:
 1. [Description](#description)
 2. [Installation](#Installation)
-3. [User Story](#User Story)
+3. [User Story](#User-Story)
 4. [Contributing](#Contributing)
 5. [Tests](#Tests)
 6. [License](#License)
