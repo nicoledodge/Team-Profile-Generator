@@ -1,6 +1,9 @@
 # Team-Profile-Generator
-![Team Profile Demo](https://drive.google.com/file/d/1XQkvd1mtTpkcO2b_GQAYxfQkcJFM7vnq/preview)
+![Team Profile Demo](https://github.com/nicoledodge/Team-Profile-Generator/blob/main/images/team%20profile%20demo.gif?raw=true)
+## Mock-up
+Mock-up example of generated HTML page containing the team profile created from the command line application.  
 
+![Team Profile Generated HTML](https://github.com/nicoledodge/Team-Profile-Generator/blob/main/images/generated%20html.png?raw=true)
 ## Licenses
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ## Table of Contents:
@@ -39,7 +42,12 @@ THEN I exit the application, and the HTML is generated
 ## Contributing
 
 ## Tests
-![Tests]()
+####Demo of four packages of tests run using the ```npm install jest```
+
+![Tests](https://github.com/nicoledodge/Team-Profile-Generator/blob/main/images/test%20demo.gif?raw=true)
+
+### Screenshot of all Tests Passed
+![Tests](https://github.com/nicoledodge/Team-Profile-Generator/blob/main/images/tests%20passed%20screenshot.png?raw=true)
 ## Questions?
 Github: [nicoledodge](@data.github)  
 Email: nicoledodge@github.com
