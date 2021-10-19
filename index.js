@@ -175,18 +175,17 @@ function compileTeam() {
 `
     teamArray.push(htmlBeginning);
     //for loop to append cards to html depending on how many are filled out
-    for (let i = 0; i < finalTeam.length; i++) {
+    for (let i = 1; i < finalTeam.length; i++) {
         let officeNum;
-        let card = `
-        <div class="member-card">
+        let card =
+            `<div class="member-card">
             <div class="card-top">
                 <h2>${finalTeam[i].name}</h2>
                 <h2>${finalTeam[i].title}</h2>
             </div>
             <div class="card-bottom">
                 <p>Employee ID: ${finalTeam[i].id}</p>
-                <p>Email: <a href="mailto:${finalTeam[i].email}">${finalTeam[i].email}</a>></p>
-        `
+                <p>Email: <a href="mailto:${finalTeam[i].email}">${finalTeam[i].email}</a></p>`
         if (finalTeam[i].officeNum) {
             card += `
             <p>Office Number: ${finalTeam[i].officeNum}</p>
@@ -194,7 +193,7 @@ function compileTeam() {
         }
         if (finalTeam[i].github) {
             card += `
-            <p>Github: <a href="https://github.com/${finalTeam[i].github}"</a></p>
+            <p>Github: <a href="https://github.com/${finalTeam[i].github}">${finalTeam[i].github}</a></p>
             `
         }
         if (finalTeam[i].school) {
